@@ -1,25 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import {createBrowserRouter, createRoutesFromElements, Route, RouterProvider} from "react-router";
+import {useTheme} from "./context/ThemeContext";
+import MinecraftMenu from "./themes/minecraft/pages/menu-page/MinecraftMenu";
+
+//TODO: setup themes logic
+//TODO: setup routes
+//TODO: develop minecraft menu landing page
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const { currentTheme } = useTheme();
+
+    const routes = createBrowserRouter(
+        createRoutesFromElements(
+            <>
+                <Route path="/" element={<MinecraftMenu />} />
+            </>
+        )
+    )
+
+    return (
+        <div className="App">
+            <RouterProvider router={routes}/>
+        </div>
+    );
 }
 
 export default App;
