@@ -4,10 +4,12 @@ import minecraftBtn from '../../../assets/button.png'
 import minecraftBtnSmall from '../../../assets/button_s.png'
 import minecraftBtnHover from '../../../assets/button_highlighted.png'
 import minecraftBtnHoverSmall from '../../../assets/button_highlighted_s.png'
+import {useNavigate} from "react-router";
 
 
-function MinecraftButton({ i, item, button_size }) {
+function MinecraftButton({ i, item, button_size, url }) {
     const [btnHoveredIndex, setBtnHoveredIndex] = useState(null);
+    const navigate = useNavigate();
 
     return (
         <Box
@@ -15,17 +17,28 @@ function MinecraftButton({ i, item, button_size }) {
             display="flex"
             sx={{
                 position: 'relative',
-                width: {xs: '320px', md: `${button_size === "large" ? '400px' : '192px'}`},
+                width: {
+                    xs: '320px',
+                    md: `${
+                        button_size === "large" ? '400px' : '192px'
+                    }`
+                },
                 alignItems: 'center',
                 justifyContent: 'center',
                 marginBottom: '16px'
             }}
+            onClick={() => navigate(`${url}`)}
         >
             <Box
                 sx={{
                     display: 'inline-block',
-                    width: {xs: '320px', md: `${button_size === "large" ? '400px' : '192px'}`},
-                    height: '48px',
+                    width: {
+                        xs: '320px',
+                        md: `${
+                            button_size === "large" ? '400px' : '192px'
+                        }`
+                    },
+                    height: "48px",
                     '&:hover': {cursor: 'pointer'}
                 }}
                 onMouseEnter={() => setBtnHoveredIndex(i)}

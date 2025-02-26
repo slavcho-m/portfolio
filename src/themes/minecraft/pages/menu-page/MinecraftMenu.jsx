@@ -1,18 +1,15 @@
-import React, {useState} from 'react';
+import React from 'react';
 import minecraftTitle from '../../../../assets/minecraft-theme-title.png'
-import minecraftBtn from '../../../../assets/button.png'
-import minecraftBtnSmall from '../../../../assets/button_s.png'
-import minecraftBtnHover from '../../../../assets/button_highlighted.png'
-import minecraftBtnHoverSmall from '../../../../assets/button_highlighted_s.png'
 import minecraftBgImage from '../../../../assets/bg-image.png'
-import {Box, Typography} from "@mui/material";
+import {Box} from "@mui/material";
 import MinecraftButton from "../../components/MinecraftButton";
+import {useNavigate} from "react-router";
 
-const bigButtonsContent = ['Choose Project', 'Select Theme', 'Developer\'s Settings']
-const smallButtonsContent = ['About', 'Quit Game']
+const bigButtonsContent = [{text: 'Choose Project', url: 'projects'}, {text: 'Developer\'s Settings', url: 'developer-settings'}, {text: 'About Developer', url: 'about'}];
+const smallButtonsContent = [{text: 'Select Theme', url: 'theme-selector'}, {text: 'Quit Game', url: 'quit-game'}]
 
 function MinecraftMenu(props) {
-    const [btnHoveredIndex, setBtnHoveredIndex] = useState(null);
+    const navigate = useNavigate();
 
     return (
         <Box
@@ -47,7 +44,8 @@ function MinecraftMenu(props) {
                 {bigButtonsContent.map((item, i) => (
                     <MinecraftButton
                         i={i}
-                        item={item}
+                        item={item.text}
+                        url={item.url}
                         button_size="large"
                     />
                 ))}
@@ -72,7 +70,8 @@ function MinecraftMenu(props) {
                         {smallButtonsContent.map((item, i) => (
                             <MinecraftButton
                                 i={i}
-                                item={item}
+                                item={item.text}
+                                url={item.url}
                                 button_size="small"
                             />
                         ))}
