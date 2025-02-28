@@ -47,6 +47,7 @@ function DeveloperSettings(props) {
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        gap: '16px',
                         mt: '104px',
                     }}
                 >
@@ -66,7 +67,7 @@ function DeveloperSettings(props) {
                     sx={{
                         alignItems: 'center',
                         justifyContent: 'center',
-                        mt: '32px'
+                        mt: '48px'
                     }}
                 >
                     <MinecraftButton

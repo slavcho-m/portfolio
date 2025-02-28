@@ -28,9 +28,15 @@ function MinecraftMenu(props) {
             {/* Title Container */}
             <Box
                 sx={{
-                    mb: {xs: '120px', md: '160px'},
+                    mb: {
+                        xs: '92px',
+                        md: '120px',
+                        lg: '160px'
+                    },
                     width: {
                         xs: '380px',
+                        sm: '548px',
+                        md: '724px',
                         lg: '1024px'
                     }
                 }}
@@ -39,7 +45,13 @@ function MinecraftMenu(props) {
             </Box>
 
             {/* Buttons Container */}
-            <Box>
+            <Box
+                sx={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '16px'
+                }}
+            >
                 {/* Single big button */}
                 {bigButtonsContent.map((item, i) => (
                     <MinecraftButton
@@ -57,27 +69,18 @@ function MinecraftMenu(props) {
                         gap: '16px',
                         alignItems: 'center',
                         justifyContent: 'center',
+                        mt: '16px'
                     }}
                 >
-                    <Box
-                        display="flex"
-                        sx={{
-                            gap: '16px',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                        }}
-                    >
-                        {smallButtonsContent.map((item, i) => (
-                            <MinecraftButton
-                                i={i}
-                                item={item.text}
-                                url={item.url}
-                                button_size="small"
-                            />
-                        ))}
-                    </Box>
+                    {smallButtonsContent.map((item, i) => (
+                        <MinecraftButton
+                            i={i}
+                            item={item.text}
+                            url={item.url}
+                            button_size="small"
+                        />
+                    ))}
                 </Box>
-
             </Box>
         </Box>
     );

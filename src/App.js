@@ -7,6 +7,7 @@ import FrontendSettings
     from "./themes/minecraft/pages/developer-settings-page/pages/frontend-settings/FrontendSettings";
 import BackendSettings from "./themes/minecraft/pages/developer-settings-page/pages/backend-settings/BackendSettings";
 import OtherSettings from "./themes/minecraft/pages/developer-settings-page/pages/other-settings/OtherSettings";
+import AboutPage from "./themes/minecraft/pages/about-page/AboutPage";
 
 //TODO: setup themes logic
 //TODO: setup routes
@@ -23,6 +24,7 @@ function App() {
                 <Route path="developer-settings/frontend-settings" element={<FrontendSettings />} />
                 <Route path="developer-settings/backend-settings" element={<BackendSettings />} />
                 <Route path="developer-settings/other-settings" element={<OtherSettings />} />
+                <Route path="about" element={<AboutPage />} />
             </>
         )
     )

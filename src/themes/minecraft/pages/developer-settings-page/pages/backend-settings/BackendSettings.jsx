@@ -33,7 +33,8 @@ function BackendSettings() {
                         content: "''",
                         width: '100%',
                         height: '10vh',
-                        position: 'absolute',
+                        position: 'fixed',
+                        top: 0,
                         backgroundImage: `url(${SettingsBackground})`,
                         zIndex: 1
                     },
@@ -43,7 +44,7 @@ function BackendSettings() {
                         width: '100%',
                         height: '10vh',
                         backgroundImage: `url(${SettingsBackground})`,
-                        position: 'absolute',
+                        position: 'fixed',
                         bottom: '0',
                         left: '0',
                         right: '0',
@@ -67,17 +68,20 @@ function BackendSettings() {
                             fontFamily: 'minecraft',
                             fontSize: '20px',
                             textShadow: '2px 2px 2px rgba(0,0,0,0.75)',
-                            position: 'static',
+                            position: 'fixed',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            top: '4%',
                         }}
                     >
-                        Frontend Settings
+                        Backend Settings
                     </Typography>
                 </Box>
                 {/* Content */}
                 <Box
                     display="flex"
                     sx={{
-                        mt: '5vh',
+                        pt: '12vh',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',

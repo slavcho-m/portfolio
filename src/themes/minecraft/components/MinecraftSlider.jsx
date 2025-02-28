@@ -14,7 +14,10 @@ function MinecraftSlider({ slider_level, text, index }) {
                 position: 'relative',
                 alignItems: "center",
                 justifyContent: "center",
-                width: '400px',
+                width: {
+                    xs: '320px',
+                    sm: '400px',
+                },
             }}
         >
             {/* Image container */}

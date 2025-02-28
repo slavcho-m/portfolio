@@ -18,14 +18,13 @@ function MinecraftButton({ i, item, button_size, url }) {
             sx={{
                 position: 'relative',
                 width: {
-                    xs: '320px',
-                    md: `${
+                    xs: `${button_size === "large" ? '320px' : '151px'}`,
+                    sm: `${
                         button_size === "large" ? '400px' : '192px'
                     }`
                 },
                 alignItems: 'center',
                 justifyContent: 'center',
-                marginBottom: '16px'
             }}
             onClick={() => navigate(`${url}`)}
         >
@@ -33,8 +32,8 @@ function MinecraftButton({ i, item, button_size, url }) {
                 sx={{
                     display: 'inline-block',
                     width: {
-                        xs: '320px',
-                        md: `${
+                        xs: `${button_size === "large" ? '320px' : '151px'}`,
+                        sm: `${
                             button_size === "large" ? '400px' : '192px'
                         }`
                     },

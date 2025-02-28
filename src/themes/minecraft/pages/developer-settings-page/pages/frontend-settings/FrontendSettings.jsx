@@ -36,7 +36,8 @@ function FrontendSettings() {
                         content: "''",
                         width: '100%',
                         height: '10vh',
-                        position: 'absolute',
+                        position: 'fixed',
+                        top: 0,
                         backgroundImage: `url(${SettingsBackground})`,
                         zIndex: 1
                     },
@@ -46,7 +47,7 @@ function FrontendSettings() {
                         width: '100%',
                         height: '10vh',
                         backgroundImage: `url(${SettingsBackground})`,
-                        position: 'absolute',
+                        position: 'fixed',
                         bottom: '0',
                         left: '0',
                         right: '0',
@@ -59,7 +60,6 @@ function FrontendSettings() {
                         width: '100%',
                         textAlign: 'center',
                         position: 'relative',
-                        pt: '48px',
                         zIndex: 2
                     }}
                 >
@@ -70,7 +70,10 @@ function FrontendSettings() {
                             fontFamily: 'minecraft',
                             fontSize: '20px',
                             textShadow: '2px 2px 2px rgba(0,0,0,0.75)',
-                            position: 'static',
+                            position: 'fixed',
+                            left: '50%',
+                            transform: 'translateX(-50%)',
+                            top: '4%',
                         }}
                     >
                         Frontend Settings
@@ -80,7 +83,7 @@ function FrontendSettings() {
                 <Box
                     display="flex"
                     sx={{
-                        mt: '5vh',
+                        pt: '12vh',
                         flexDirection: 'column',
                         alignItems: 'center',
                         justifyContent: 'center',
@@ -89,8 +92,8 @@ function FrontendSettings() {
                 >
                     {skillSet.map((item, i) => (
                         <MinecraftSlider
-                        text={item.text}
-                        slider_level={item.level}
+                            text={item.text}
+                            slider_level={item.level}
                         />
                     ))}
                 </Box>
