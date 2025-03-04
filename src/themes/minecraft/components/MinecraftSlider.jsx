@@ -61,12 +61,12 @@ function MinecraftSlider({ slider_level, text, index }) {
                     fontSize: '20px',
                     fontFamily: 'Minecraft',
                     position: 'absolute',
-                    color: '#fff',
-                    textShadow: '2px 2px 2px rgba(0,0,0,0.85)',
+                    color: '#fffcf5',
+                    textShadow: '2px 2px 1px rgba(0,0,0,1)',
                     textAlign: 'center',
                     width: '100%'
                 }}
-            >{text} ({slider_percentage})</Typography>
+            >{text} ( {slider_percentage}% )</Typography>
         </Box>
     );
 }

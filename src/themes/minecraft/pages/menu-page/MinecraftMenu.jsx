@@ -34,7 +34,7 @@ function MinecraftMenu(props) {
                         lg: '160px'
                     },
                     width: {
-                        xs: '380px',
+                        xs: '360px',
                         sm: '548px',
                         md: '724px',
                         lg: '1024px'
