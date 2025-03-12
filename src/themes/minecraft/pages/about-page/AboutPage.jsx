@@ -8,10 +8,13 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import EmailIcon from '@mui/icons-material/Email';
 
+//TODO: cleanup, separate different body components into individual components
+
 function AboutPage() {
     return (
         <MinecraftSettingsBackground
             title="About Me"
+            isBackButton={true}
         >
             {/* Content Container */}
             <Box>
@@ -25,7 +28,7 @@ function AboutPage() {
                             xs: 'column',
                             sm: 'row'
                         },
-                        gap: '24px'
+                        gap: '128px'
                     }}
                 >
                     {/* PFP Image container */}
@@ -114,6 +117,115 @@ function AboutPage() {
                     </Box>
                 </Box>
 
+                {/* Body content */}
+                <Box
+                    sx={{
+                        width: '75%',
+                        margin: '64px auto 0',
+                    }}
+                >
+                    {/* First paragraph */}
+                    <Box
+                        display="flex"
+                        sx={{
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Typography
+                            component="h2"
+                            sx={{
+                                color: 'white',
+                                fontSize: '24px',
+                                fontFamily: 'Minecraft',
+                                mb: '16px',
+                            }}
+                        >
+                            Profile
+                        </Typography>
+                        <Typography
+                            component="p"
+                            sx={{
+                                color: 'white',
+                                textAlign: 'center',
+                                fontFamily: 'Minecraft',
+                            }}
+                        >
+                            An undergraduate computer science student majoring in software development and information systems. Through various projects, I have honed my communication and teamwork skills while delivering quality results. Passionate about the ever-evolving IT field, I am dedicated to continuously learning and refining my expertise to stay ahead in the industry.
+                        </Typography>
+                    </Box>
+
+                    {/* Second paragraph */}
+                    <Box
+                        display="flex"
+                        sx={{
+                            mt: '64px',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Typography
+                            component="h2"
+                            sx={{
+                                color: 'white',
+                                fontSize: '24px',
+                                fontFamily: 'Minecraft',
+                                mb: '16px',
+                            }}
+                        >
+                            Relevant finished subjects from studies
+                        </Typography>
+                        <Typography
+                            component="p"
+                            sx={{
+                                color: 'white',
+                                textAlign: 'center',
+                                fontFamily: 'Minecraft',
+                            }}
+                        >
+                            Structured Programming - Object Oriented Programming - Object Oriented Analysis and Design - Advanced Programming - Algorithms and Data Structures - Client side Programming - Software Requirements Analysis - Visual Programming - Internet Technologies - Operating Systems  - Web Programming (Spring) - Software Design and Architecture - Introduction to Data Science
+                        </Typography>
+                    </Box>
+
+                    {/* Third paragraph */}
+                    <Box
+                        display="flex"
+                        sx={{
+                            mt: '64px',
+                            flexDirection: 'column',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Typography
+                            component="h2"
+                            sx={{
+                                color: 'white',
+                                fontSize: '24px',
+                                fontFamily: 'Minecraft',
+                                mb: '16px',
+                            }}
+                        >
+                            Education
+                        </Typography>
+                        <Typography
+                            component="p"
+                            sx={{
+                                color: 'white',
+                                textAlign: 'center',
+                                fontFamily: 'Minecraft',
+                            }}
+                        >
+                            “St. Cyril and Methodius” University - Faculty of Computer Science and Engineering <br/>
+                            Major - Software engineering and information systems <br/>
+                            Oct 2022 - Present (Skopje) <br/> <br/>
+                            “Josip Broz Tito” Gymnasium <br/>
+                            Sep 2018 - Jun 2022 (Bitola)
+                        </Typography>
+                    </Box>
+                </Box>
             </Box>
         </MinecraftSettingsBackground>
     );

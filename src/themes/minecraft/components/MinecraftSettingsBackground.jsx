@@ -2,6 +2,7 @@ import React from 'react';
 import {Box, Typography} from "@mui/material";
 import DarkSettingsBackground from "../../../assets/options_dark_background.png";
 import SettingsBackground from "../../../assets/options_background.png";
+import MinecraftButton from "./MinecraftButton";
 
 function MinecraftSettingsBackground({
                                          title,
@@ -9,6 +10,7 @@ function MinecraftSettingsBackground({
                                          alignItems="center",
                                          justifyContent="center",
                                          gap="8px",
+                                         isBackButton=false,
                                          children
 }) {
 
@@ -73,11 +75,28 @@ function MinecraftSettingsBackground({
                         {title}
                     </Typography>
                 </Box>
+
+                {/* Optional Back button */}
+                {isBackButton && <Box
+                    sx={{
+                        position: 'fixed',
+                        bottom: 10,
+                        right: '50%',
+                        transform: 'translateX(50%)',
+                        zIndex: 2,
+                    }}
+                >
+                    <MinecraftButton
+                        button_size="large"
+                        url="/"
+                        item="Back to Home"
+                    />
+                </Box>}
                 {/* Content */}
                 <Box
                     display="flex"
                     sx={{
-                        pt: '12vh',
+                        p: '12vh 0',
                         flexDirection: `${flexDirection}`,
                         alignItems: `${alignItems}`,
                         justifyContent: `${justifyContent}`,
